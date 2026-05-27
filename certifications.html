@@ -3,23 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IntroduceIrfan</title>
+    <title>Certifications — Introduce Irfan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <nav>
         <div class="nav-logo">Introduce Irfan</div>
-        <ul class="nav-links">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
-            <li><a href="certifications.html">Certifications</a></li>
+            <li><a href="certifications.html" class="active">Certifications</a></li>
             <li><a href="about.html">About Me!</a></li>
         </ul>
     </nav>
-    
-<footer>
-  <p>© 2026 Febrian Naufal Irfansyah</p>
-</footer>
+
+    <div class="coming-soon-wrapper">
+        <div class="coming-soon-badge">Coming Soon</div>
+        <div class="coming-soon-icon">
+            <i class="fa-solid fa-certificate"></i>
+        </div>
+        <h1>My <span>Certifications</span></h1>
+        <p>
+            Certifications will be added shortly. 
+            This is just a placeholder!
+        </p>
+        <a href="index.html" class="btn-primary">Back to Home</a>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

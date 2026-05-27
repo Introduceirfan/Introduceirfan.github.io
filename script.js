@@ -49,3 +49,20 @@ setInterval(() => {
   currentBg = (currentBg + 1) % bgImages.length;
   bgImages[currentBg].classList.add('active');
 }, 4000);
+
+// Mobile nav
+const navToggle = document.getElementById('navToggle');
+const navMenu = document.getElementById('navLinks');
+
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('open');
+  });
+
+  // close menu
+  navMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navMenu.classList.remove('open');
+    });
+  });
+}

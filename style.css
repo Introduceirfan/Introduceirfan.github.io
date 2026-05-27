@@ -52,6 +52,25 @@ nav {
     color: #4ade4a
 }
 
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #e0e0e0;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+
 /* Home style */
 #home {
     min-height: 100vh;
@@ -381,4 +400,172 @@ footer span {
 /* navbar */
 .nav-links a.active {
   color: #4ade80;
+}
+
+/* coming soon stuff */
+.coming-soon-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.coming-soon-wrapper::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, transparent 70%);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.coming-soon-icon {
+    font-size: 3.5rem;
+    color: #4ade80;
+    margin-bottom: 1.5rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.coming-soon-wrapper h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1rem;
+}
+
+.coming-soon-wrapper h1 span {
+    color: #4ade80;
+}
+
+.coming-soon-wrapper p {
+    color: #a0a0a0;
+    font-size: 1.05rem;
+    max-width: 450px;
+    line-height: 1.8;
+    margin-bottom: 2.5rem;
+}
+
+.coming-soon-badge {
+    display: inline-block;
+    background-color: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.3);
+    color: #4ade80;
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 0.4rem 1.2rem;
+    border-radius: 20px;
+    margin-bottom: 2rem;
+}
+
+/* for mobile */
+@media (max-width: 768px) {
+    /* Nav mobile */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: rgba(13, 13, 13, 0.97);
+        border-bottom: 1px solid #1a1a1a;
+        padding: 1rem 0;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 0.8rem 5%;
+        font-size: 1rem;
+    }
+
+    /* Hero mobile */
+    #home {
+        padding: 0 6%;
+        padding-top: 80px;
+        align-items: flex-start;
+        padding-bottom: 3rem;
+    }
+
+    .hero-name {
+        font-size: 2.2rem;
+    }
+
+    .hero-tagline {
+        font-size: 1.1rem;
+    }
+
+    .hero-stats {
+        gap: 1.5rem;
+    }
+
+    .stat-item h3 {
+        font-size: 1.8rem;
+    }
+
+    /* Projects mobile */
+    #projects {
+        padding: 4rem 6%;
+    }
+
+    .project-card,
+    .project-card:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    /* Contact mobile */
+    #contact {
+        padding: 4rem 6%;
+    }
+
+    .contact-card {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    /* Coming soon mobile */
+    .coming-soon-wrapper h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-name {
+        font-size: 1.8rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        text-align: center;
+    }
 }

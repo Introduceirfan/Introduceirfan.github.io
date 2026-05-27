@@ -10,7 +10,10 @@
 <body>
     <nav>
         <div class="nav-logo">Introduce Irfan</div>
-        <ul class="nav-links">
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
             <li><a href="projects.html">Projects</a></li>
             <li><a href="certifications.html">Certifications</a></li>
@@ -29,7 +32,7 @@
         <div class="hero-content fade-in">
             <p class="hero-greeting">Hello everyone, I'm</p>
             <h1 class="hero-name">Febrian Naufal <span>Irfan</span>syah</h1>
-            <h2 class="hero-tagline">Exploring data, building something unusual.</h2>
+            <h2 class="hero-tagline">Exploring data, build something unusual.</h2>
             <p class="hero-desc">
                 An Industrial Engineering Fresh graduate with a passion for data and technology.
                 I turn messy things into meaningful insights and sometimes i building things along the way.
@@ -38,69 +41,72 @@
                 <a href="#projects" class="btn-primary">View My Projects!</a>
                 <a href="CV/CV Fix Febrian Naufal Irfansyah.pdf" download class="btn-secondary">Download My Resume!</a>
             </div>
-        </div>
-        <div class="hero-stats">
-            <div class="stat-item">
-                <h3>2+</h3>
-                <p>Data Projects</p>
-            </div>
-            <div class="stat-item">
-                <h3>2+</h3>
-                <p>Software Projects</p>
-            </div>
-            <div class="stat-item">
-                <h3>4+</h3>
-                <p>Certifications</p>
-            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>2+</h3>
+                    <p>Data Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2+</h3>
+                    <p>Software Projects</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4+</h3>
+                    <p>Certifications</p>
+                </div>
+            </div>  
         </div>
     </section>
 
     <!--Projects-->
-    <section id="projects"></section>
-    <div class="projects-container fade-in">
-        <p class="section-label">Recent of My Work!</p>
-        <h2 class="section-title">Explore My Portofolio</h2>
+    <section id="projects">
+        <div class="projects-container fade-in">
+            <p class="section-label">Recent of My Work!</p>
+            <h2 class="section-title">Explore My Portfolio</h2>
 
-        <div class="projects-list">
-            
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src = "https://placehold.co/600x400/1a1a1a/4ade80?text=Olist+Analysis" alt="Olist Analysis" />
-                </div>
-                <div class="project-info">
-                    <span class="project-label">Data</span>
-                    <h3>E-Commerce Sales Analysis</h3>
-                    <p>Analyzed 100k+ transaction records dataset from Olist Brazillian E-commerce to identify sales trends and customer behavior </p>
-                    <div class="project-stack">
-                        <span>Python</span>
-                        <span>Pandas</span>
-                        <span>Seaborn</span>
+            <div class="projects-list">
+                
+                <!-- Project 1 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/1a1a1a/4ade80?text=Olist+Analysis" alt="Olist Analysis" />
                     </div>
-                    <a href="#" class="btn-primary">View Project</a>
+                    <div class="project-info">
+                        <span class="project-label">Data</span>
+                        <h3>E-Commerce Sales Analysis</h3>
+                        <p>Analyzed 100k+ transaction records dataset from Olist Brazillian E-commerce to identify sales trends and customer behavior.</p>
+                        <div class="project-stack">
+                            <span>Python</span>
+                            <span>Pandas</span>
+                            <span>Seaborn</span>
+                        </div>
+                        <a href="#" class="btn-primary">View Project</a>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src = "https://placehold.co/600x400/1a1a1a/4ade80?text=Olist+Analysis" alt="Olist Analysis" />
-                </div>
-                <div class="project-info">
-                    <span class="project-label">Website</span>
-                    <h3>Cafe Management Database Web-Based App</h3>
-                    <p>Built a web-based database application for an F&B startup from scratch including handling inventory, orders, and reporting.</p>
-                    <div class="project-stack">
-                        <span>Python</span>
-                        <span>Flask</span>
-                        <span>Sqlite</span>
+                <!-- Project 2 -->
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://placehold.co/600x400/1a1a1a/4ade80?text=Cafe+Management" alt="Cafe Management" />
                     </div>
-                    <a href="#" class="btn-primary">View Project</a>
+                    <div class="project-info">
+                        <span class="project-label">Website</span>
+                        <h3>Cafe Management Database Web-Based App</h3>
+                        <p>Built a web-based database application for an F&B startup from scratch including handling inventory, orders, and reporting.</p>
+                        <div class="project-stack">
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>SQLite</span>
+                        </div>
+                        <a href="#" class="btn-primary">View Project</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>    
-    <!--Contact MEE-->
+    </section>
+
+    <!-- Contact -->
     <section id="contact">
         <div class="contact-container fade-in">
             <p class="section-label">Get In Touch!</p>
@@ -127,9 +133,11 @@
             </div>
         </div>
     </section>
+
+    <footer>
+        <p>© 2026 Febrian Naufal Irfansyah</p>
+    </footer>
+
     <script src="script.js"></script>
-<footer>
-  <p>© 2026 Febrian Naufal Irfansyah</p>
-</footer>
 </body>
 </html>
