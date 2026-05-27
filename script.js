@@ -39,3 +39,13 @@ window.addEventListener('scroll', () => {
     }
   });
 });
+
+// Home Slider
+const bgImages = document.querySelectorAll('.hero-bg img');
+let currentBg = 0;
+
+setInterval(() => {
+  bgImages[currentBg].classList.remove('active');
+  currentBg = (currentBg + 1) % bgImages.length;
+  bgImages[currentBg].classList.add('active');
+}, 4000);
