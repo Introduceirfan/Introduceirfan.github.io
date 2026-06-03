@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntroduceIrfan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/static/style.css" />
 </head>
 <body>
     <nav>
@@ -15,18 +15,18 @@
         </button>
         <ul class="nav-links" id="navLinks">
             <li><a href="index.html">Home</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="journey.html">My Journey</a></li>
-            <li><a href="about.html">About Me!</a></li>
+            <li><a href="pages/projects.html">Projects</a></li>
+            <li><a href="pages/journey.html">My Journey</a></li>
+            <li><a href="pages/about.html">About Me!</a></li>
         </ul>
     </nav>
     
     <!--Home-->
     <section id="home">
         <div class="hero-bg">
-            <img src = "image/placeholder1.jpg" alt="bg1" />
-            <img src = "image/placeholder2.jpg" alt="bg2" />
-            <img src = "image/placeholder3.jpg" alt="bg3" />
+            <img src = "assets/image/placeholder1.jpg" alt="bg1" />
+            <img src = "assets/image/placeholder2.jpg" alt="bg2" />
+            <img src = "assets/image/placeholder3.jpg" alt="bg3" />
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content fade-in">
@@ -38,7 +38,7 @@
                 I turn messy things into meaningful insights and sometimes i building things along the way.
             </p>
             <div class="hero-buttons">
-                <a href="#projects" class="btn-primary">View My Projects!</a>
+                <a href="pages/projects.html" class="btn-primary">View My Projects!</a>
                 <a href="CV/CV_Febrian.pdf" download class="btn-secondary">Download My Resume!</a>
             </div>
 
@@ -70,7 +70,7 @@
                 <!-- Project 1 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="image/placeholder2.jpg" />
+                        <img src="assets/image/placeholder2.jpg" />
                     </div>
                     <div class="project-info">
                         <span class="project-label">Data</span>
@@ -81,14 +81,14 @@
                             <span>Pandas</span>
                             <span>Seaborn</span>
                         </div>
-                        <a href="#" class="btn-primary">View Project</a>
+                        <a href="pages/project-detail.html?id=olist" class="btn-primary">View Project</a>
                     </div>
                 </div>
 
                 <!-- Project 2 -->
                 <div class="project-card">
                     <div class="project-image">
-                        <img src="image/placeholder1.jpg" />
+                        <img src="assets/image/placeholder1.jpg" />
                     </div>
                     <div class="project-info">
                         <span class="project-label">Website</span>
@@ -99,7 +99,7 @@
                             <span>Flask</span>
                             <span>SQLite</span>
                         </div>
-                        <a href="#" class="btn-primary">View Project</a>
+                        <a href="pages/project-detail.html?id=cafe" class="btn-primary">View Project</a>
                     </div>
                 </div>
             </div>
@@ -137,6 +137,6 @@
         <p>© 2026 Febrian Naufal Irfansyah</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="assets/static/script.js"></script>
 </body>
 </html>

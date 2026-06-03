@@ -1,0 +1,38 @@
+[
+  {
+    "id": "olist",
+    "title": "E-Commerce Sales Analysis (Olist)",
+    "badge": "Data Analysis",
+    "badgeIcon": "fa-solid fa-database",
+    "cardIcon": "fa-solid fa-chart-line",
+    "category": "data",
+    "stack": ["Python", "Pandas", "Seaborn", "SQL"],
+    "summary": "Analyzed 100k+ transaction records from Olist's Brazilian e-commerce dataset to uncover sales trends, customer behavior, and regional demand patterns.",
+    "description": "Lorem ipsum detail project Olist. Ceritain di sini apa yang kamu lakuin, insights yang ketemu, metodologi, dll.",
+    "highlights": [
+      "Analyzed 100k+ transaction records",
+      "Uncovered regional demand patterns",
+      "Customer behavior segmentation"
+    ],
+    "github": "https://github.com/Introduceirfan",
+    "demo": ""
+  },
+  {
+    "id": "cafe",
+    "title": "Cafe Management Web Application",
+    "badge": "Web App",
+    "badgeIcon": "fa-solid fa-globe",
+    "cardIcon": "fa-solid fa-mug-hot",
+    "category": "web",
+    "stack": ["Python", "Flask", "SQLite", "HTML/CSS/JS"],
+    "summary": "Built a full-stack web app for an F&B startup to automate inventory, orders, sales reporting, and staff shifts using a lightweight backend.",
+    "description": "Lorem ipsum detail project Cafe Management. Ceritain di sini flow aplikasinya, fitur-fiturnya, tantangan yang dihadapi, dll.",
+    "highlights": [
+      "Automated inventory management",
+      "Real-time sales reporting",
+      "Staff shift scheduling"
+    ],
+    "github": "https://github.com/Introduceirfan",
+    "demo": ""
+  }
+]
