@@ -16,6 +16,15 @@ body {
   font-family: 'Segoe UI', sans-serif;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-color: rgba(13, 13, 13, 0.6);
+  z-index: -1;
+  pointer-events: none
+}
+
 /* ─── Google Fonts ─── */
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap');
 
@@ -88,6 +97,7 @@ nav {
 }
 
 /* ─── Home / Hero ─── */
+
 #home {
   min-height: 100vh;
   display: flex;
@@ -97,6 +107,14 @@ nav {
   padding-top: 80px;
   position: relative;
   overflow: hidden;
+}
+
+.hero-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(13, 13, 13, 1) 0%,
+    transparent 50%
+  );
 }
 
 .hero-greeting {
@@ -137,30 +155,6 @@ nav {
 .hero-buttons {
   display: flex;
   gap: 1rem;
-}
-
-.hero-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-.hero-bg img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0;
-  transition: opacity 1.5s ease;
-}
-
-.hero-bg img.active {
-  opacity: 0.2;
 }
 
 .hero-content {
@@ -345,18 +339,6 @@ nav {
   display: none;
 }
 
-.project-card.coming-soon {
-  opacity: 0.45;
-  cursor: default;
-  pointer-events: none;
-}
-
-.project-card.coming-soon:hover {
-  transform: none;
-  box-shadow: none;
-  border-color: #2a2a2a;
-}
-
 .project-thumb-placeholder {
   width: 100%;
   aspect-ratio: 16 / 9;
@@ -374,6 +356,12 @@ nav {
   flex-direction: column;
   gap: 0.55rem;
   flex: 1;
+}
+
+.project-info .btn-primary {
+  width: fit-content;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 .project-badge {
@@ -461,7 +449,7 @@ nav {
 /* ─── Index Projects Section (legacy .projects-list layout) ─── */
 #projects {
   padding: 6rem 10%;
-  background-color: #0d0d0d;
+  background-color: transparent;
 }
 
 .section-label {
@@ -484,9 +472,15 @@ nav {
 }
 
 .projects-list {
-  display: flex;
-  flex-direction: column;
-  gap: 4rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.projects-list .project-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1; /* full width */
+  max-width: 50%; /* biar ga melebar */
+  margin: 0 auto; /* tengah */
 }
 
 .project-label {
@@ -564,76 +558,6 @@ nav {
   font-size: 0.78rem;
   color: #a0a0a0;
   text-align: center;
-}
-
-/* ─── Coming Soon Page ─── */
-.coming-soon-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.coming-soon-wrapper::before {
-  content: '';
-  position: absolute;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(74, 222, 128, 0.08) 0%, transparent 70%);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-}
-
-.coming-soon-icon {
-  font-size: 3.5rem;
-  color: #4ade80;
-  margin-bottom: 1.5rem;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-}
-
-.coming-soon-wrapper h1 {
-  font-family: 'Sora', sans-serif;
-  font-size: 3rem;
-  font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.coming-soon-wrapper h1 span {
-  color: #4ade80;
-}
-
-.coming-soon-wrapper p {
-  color: #a0a0a0;
-  font-size: 1.05rem;
-  max-width: 450px;
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
-}
-
-.coming-soon-badge {
-  display: inline-block;
-  background-color: rgba(74, 222, 128, 0.1);
-  border: 1px solid rgba(74, 222, 128, 0.3);
-  color: #4ade80;
-  font-size: 0.8rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding: 0.4rem 1.2rem;
-  border-radius: 20px;
-  margin-bottom: 2rem;
 }
 
 /* ─── About Page ─── */
@@ -738,6 +662,12 @@ nav {
   border-left: 3px solid #4ade80;
   padding: 0.8rem 1rem;
   border-radius: 0 8px 8px 0;
+}
+
+.about-card .btn-secondary {
+  width: fit-content;
+  display: inline-block;
+  margin-top: 1rem;
 }
 
 /* Skills grid */
@@ -850,6 +780,9 @@ footer {
   border-top: 1px solid #1a1a1a;
   color: #a0a0a0;
   font-size: 0.85rem;
+  background-color: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #1a1a1a;
 }
 
 footer span {
@@ -1006,6 +939,7 @@ footer span {
     padding-top: 80px;
     align-items: flex-start;
     padding-bottom: 3rem;
+    overflow: hidden;
   }
 
   .hero-name {
@@ -1050,6 +984,15 @@ footer span {
   .project-card,
   .project-card:nth-child(even) {
     flex-direction: column;
+  }
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .projects-list .project-card:last-child:nth-child(odd) {
+    grid-column: auto; 
+    max-width: 100%; 
+    margin: 0;
   }
 
   .section-title {
