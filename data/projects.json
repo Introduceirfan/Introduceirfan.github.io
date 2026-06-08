@@ -4,35 +4,47 @@
     "title": "E-Commerce Sales Analysis (Olist)",
     "badge": "Data Analysis",
     "badgeIcon": "fa-solid fa-database",
-    "cardIcon": "fa-solid fa-chart-line",
+    "image": "../assets/image/data_analysis.png",
     "category": "data",
-    "stack": ["Python", "Pandas", "Seaborn", "SQL"],
-    "summary": "Analyzed 100k+ transaction records from Olist's Brazilian e-commerce dataset to uncover sales trends, customer behavior, and regional demand patterns.",
-    "description": "Lorem ipsum detail project Olist. Ceritain di sini apa yang kamu lakuin, insights yang ketemu, metodologi, dll.",
+    "stack": ["Python", "Pandas", "Seaborn"],
+    "description": "Analyzed 100k+ transaction records from Olist's Brazilian e-commerce platform to answer business question about how is customer behavior, delivery performance, and payment preferences. The goal was to get a key insight that could help improve customer satisfaction and business strategy",
     "highlights": [
-      "Analyzed 100k+ transaction records",
-      "Uncovered regional demand patterns",
-      "Customer behavior segmentation"
+      "Peak orders of shopping occurs Monday to Wednesday between 9AM - 6 PM, suggesting weekday have the highest transaction volume",
+      "Delivery speed have positive impacts on satisfaction. Orders that arriving 13 days early have average 5-star ratings, while 1-star rating occurs when orders arrive only 4 days early. This suggesting customer expectation play a key role",
+      "Credit card is the dominant payment method at 76% of transactions and carrying the highest average transaction value"
     ],
-    "github": "https://github.com/Introduceirfan",
-    "demo": ""
+    "github": "https://github.com/Introduceirfan/KagglingSelf/tree/main/Olist_brazil"
   },
   {
     "id": "cafe",
     "title": "Cafe Management Web Application",
-    "badge": "Web App",
+    "badge": "Web",
     "badgeIcon": "fa-solid fa-globe",
-    "cardIcon": "fa-solid fa-mug-hot",
+    "image": "../assets/image/database_cafe.png",
     "category": "web",
     "stack": ["Python", "Flask", "SQLite", "HTML/CSS/JS"],
-    "summary": "Built a full-stack web app for an F&B startup to automate inventory, orders, sales reporting, and staff shifts using a lightweight backend.",
-    "description": "Lorem ipsum detail project Cafe Management. Ceritain di sini flow aplikasinya, fitur-fiturnya, tantangan yang dihadapi, dll.",
+    "description": "Built a lightweight web-based database application for a cafe startup to manage day-to-day operational. The app connects inventory, menu, and sales, where inputting a sales automatically deducts ingredients that listed in inventory based on the recipe linked on menu item.",
     "highlights": [
-      "Automated inventory management",
-      "Real-time sales reporting",
-      "Staff shift scheduling"
+      "Inventory management with low-stock and unavailable menu alerts visible on the dashboard",
+      "Menu and recipe management, each menu is linked to ingredients listed in inventory",
+      "Sales input that automatically tracks daily transaction history and deducts ingredient availability based on recipe."
     ],
-    "github": "https://github.com/Introduceirfan",
-    "demo": ""
+    "github": "https://github.com/Introduceirfan/Database_app"
+  },
+  {
+    "id": "personalweb",
+    "title": "Personal Website",
+    "badge": "Web",
+    "badgeIcon": "fa-solid fa-globe",
+    "image": "../assets/image/personal_website.png",
+    "category": "web",
+    "stack": ["HTML", "CSS", "JS", "JSON"],
+    "description": "Personal website that allows myself to introduce myself, showcase my projects, and documenting my life journey so far.",
+    "highlights": [
+      "I built this with my zero experience and self taught programming skills",
+      "Took way longer than expected because i really need to understand the line code..",
+      "Still under construction, just like me right now."
+    ],
+    "github": "https://github.com/Introduceirfan/Introduceirfan.github.io"
   }
 ]

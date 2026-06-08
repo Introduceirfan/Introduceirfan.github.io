@@ -232,6 +232,10 @@
         // Render highlights
         const highlightsHTML = project.highlights.map(h => `<li>${h}</li>`).join('');
 
+        // image opener
+        const thumbHTML = project.image
+          ? `<img src="${project.image}" style="width:100%; border-radius:14px; border:1px solid #2a2a2a; margin-bottom:2rem; object-fit:cover;"/>`
+          : `<div class="detail-thumb"><i class="${project.cardIcon}"></i></div>`;
         // Render action buttons
         const githubBtn = project.github
           ? `<a href="${project.github}" target="_blank" class="btn-primary"><i class="fa-brands fa-github"></i> View on GitHub</a>`
@@ -253,9 +257,10 @@
 
           <div class="detail-stack">${stackHTML}</div>
 
-          <div class="detail-thumb">
-            <i class="${project.cardIcon}"></i>
-          </div>
+          ${project.image 
+            ? `<img src="${project.image}" style="width:100%; border-radius:14px; border:1px solid #2a2a2a; margin-bottom:2rem; object-fit:cover;"/>` 
+            : `<div class="detail-thumb"><i class="${project.cardIcon}"></i></div>`
+          }
 
           <div class="detail-section">
             <div class="detail-section-header">
