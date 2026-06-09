@@ -31,95 +31,11 @@
   </section>
 
   <!-- FILTER -->
-  <div class="filter-container fade-in">
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="data">Data</button>
-    <button class="filter-btn" data-filter="web">Web</button>
-    <button class="filter-btn" data-filter="other">Other</button>
-  </div>
+  <div class ="filter-container fade-in" id="filterContainer"></div>
 
-  <!-- PROJECTS GRID -->
+  <!--Projects grid-->
   <section class="projects-section">
-    <div class="projects-grid" id="projectsGrid">
-
-      <!-- Project 1: Olist -->
-      <a href="project-detail.html?id=olist" class="project-card fade-in" data-category="data" ...>
-        <div class="project-image">
-          <img src="../assets/image/data_analysis.png" alt="Olist" />
-        </div>
-        <div class="project-info">
-          <span class="project-badge"><i class="fa-solid fa-database"></i> Data Analysis</span>
-          <h3>E-Commerce Sales Analysis (Olist)</h3>
-          <p>Analyzed 100k+ transaction records from Olist's Brazilian e-commerce dataset to uncover sales trends, customer behavior, and regional demand patterns.</p>
-          <div class="project-stack">
-            <span>Python</span>
-            <span>Pandas</span>
-            <span>Seaborn</span>
-          </div>
-          <div class="project-link-hint">
-            View Project <i class="fa-solid fa-arrow-right"></i>
-          </div>
-        </div>
-      </a>
-
-      <!-- Project 2: Cafe -->
-      <a href="project-detail.html?id=cafe" class="project-card fade-in" data-category="web" ...>
-        <div class="project-image">
-          <img src="../assets/image/database_cafe.png" alt="Olist" />
-        </div>
-        <div class="project-info">
-          <span class="project-badge"><i class="fa-solid fa-globe"></i>Web</span>
-          <h3>Cafe Management Web Application</h3>
-          <p>Built a full-stack web app for an F&B startup to manage day-to-day operational. The app connects inventory, menu(recipes), and sales using a lightweight backend.</p>
-          <div class="project-stack">
-            <span>Python</span>
-            <span>Flask</span>
-            <span>SQLite</span>
-            <span>HTML/CSS/JS</span>
-          </div>
-          <div class="project-link-hint">
-            View Project <i class="fa-solid fa-arrow-right"></i>
-          </div>
-        </div>
-      </a>
-
-      <!-- Project 3: Personal Website -->
-      <a href="project-detail.html?id=personalweb" class="project-card fade-in" data-category="web" ...>
-        <div class="project-image">
-          <img src="../assets/image/personal_website.png" alt="Olist" />
-        </div>
-        <div class="project-info">
-          <span class="project-badge"><i class="fa-solid fa-globe"></i>Web</span>
-          <h3>Introduce Irfan</h3>
-          <p>My own personal website as you can see right now!</p>
-          <div class="project-stack">
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JS</span>
-            <span>JSON</span>
-          </div>
-          <div class="project-link-hint">
-            View Project <i class="fa-solid fa-arrow-right"></i>
-          </div>
-        </div>
-      </a>
-
-      <!-- Project 4: Coming Soon -->
-      <div class="project-card coming-soon fade-in" data-category="other">
-        <div class="project-thumb-placeholder">
-          <i class="fa-solid fa-hourglass-half"></i>
-        </div>
-        <div class="project-info">
-          <span class="coming-badge">Coming Soon</span>
-          <h3>Next Project</h3>
-          <p>Something new is in the works. Stay tuned!</p>
-          <div class="project-stack">
-            <span>TBD</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <div class="projects-grid" id="projectsGrid"></div>
   </section>
 
 <!-- Contact -->
@@ -161,36 +77,64 @@
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 
     // Filter
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const cards = document.querySelectorAll('#projectsGrid .project-card');
+    //fetch projects json
+    fetch('../data/projects.json')
+      .then(res => res.json())
+      .then(projects => {
+        //auto generate filter button
+        const categories = ['all', ...new Set(projects.map(p => p.category))];
+        const filterContainer = document.getElementById('filterContainer');
+        filterContainer.innerHTML = categories.map(cat => `
+          <button class="filter-btn ${cat === 'all' ? 'active' : ''}" data-filter="${cat}">
+            ${cat.charAt(0).toUpperCase() + cat.slice(1)}
+            </button>
+          `).join('');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+          //generate project card
+          const grid = document.getElementById('projectsGrid');
+          grid.innerHTML = projects.map(p => `
+          <a href="project-detail.html?id=${p.id}" class="project-card fade-in" data-category="${p.category}">
+            <div class="project-image">
+              <img src="${p.image}" alt="${p.title}" />
+            </div>
+            <div class="project-info">
+              <span class="project-badge"><i class="${p.badgeIcon}"></i> ${p.badge}</span>
+              <h3>${p.title}</h3>
+              <p>${p.summary}</p>
+              <div class="project-stack">
+                ${p.stack.map(s => `<span>${s}</span>`).join('')}
+              </div>
+              <div class="project-link-hint">
+                View Project <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </div>
+          </a>
+        `).join('');
 
-        const filter = btn.dataset.filter;
-        cards.forEach(card => {
-          const cat = card.dataset.category;
-          if (filter === 'all' || cat === filter) {
-            card.classList.remove('hidden');
-          } else {
-            card.classList.add('hidden');
+        //Filter logic
+        filterContainer.addEventListener('click', e => {
+          if (!e.target.classList.contains('filter-btn')) return;
+          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          e.target.classList.add('active');
+
+          const filter = e.target.dataset.filter;
+          document.querySelectorAll('#projectsGrid .project-card').forEach(card => {
+            filter === 'all' || card.dataset.category === filter
+              ? card.classList.remove('hidden')
+              : card.classList.add('hidden');
+          });
+        });
+
+      // Fade-in on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
           }
         });
-      });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
     });
-
-    // Fade-in on scroll
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
-      });
-    }, { threshold: 0.1 });
-
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
   </script>
 
 </body>

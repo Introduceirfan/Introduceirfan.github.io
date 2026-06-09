@@ -981,6 +981,16 @@ footer span {
     padding: 4rem 6%;
   }
 
+  .project-image {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .project-image img {
+    object-fit: contain;
+    background: #1a1a1a;
+  }
+  
   .project-card,
   .project-card:nth-child(even) {
     flex-direction: column;
@@ -1005,8 +1015,16 @@ footer span {
   }
 
   .contact-card {
-    width: 100%;
-    max-width: 280px;
+    padding: 1rem 0.8rem;
+    gap: 0.3rem;
+  }
+  
+  .contact-card h4 {
+    font-size: 0.9rem;
+  }
+
+  .contact-card p {
+    font-size: 0.72rem;
   }
 
   /* Journey */

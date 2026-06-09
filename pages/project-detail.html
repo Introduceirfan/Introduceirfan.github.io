@@ -243,7 +243,9 @@
         const demoBtn = project.demo
           ? `<a href="${project.demo}" target="_blank" class="btn-secondary"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live Demo</a>`
           : '';
-
+        const reportBtn = project.report
+          ? `<a href="${project.report}" target="_blank" class="btn-secondary"><i class="fa-solid fa-file"></i> View Report</a>`
+          : '';  
         container.innerHTML = `
           <a href="projects.html" class="detail-back">
             <i class="fa-solid fa-arrow-left"></i> Back to Projects
@@ -285,6 +287,7 @@
           <div class="detail-actions">
             ${githubBtn}
             ${demoBtn}
+            ${reportBtn}
           </div>
         `;
       })
