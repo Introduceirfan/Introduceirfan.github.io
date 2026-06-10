@@ -7,7 +7,7 @@
     "image": "../assets/image/data_analysis.png",
     "category": "data",
     "stack": ["Python", "Pandas", "Seaborn"],
-    "summary": "this is my placeholder 1, under construction :)",
+    "summary": "Exploratory data analysis on around 100k transaction records from Brazilian e-commerce platform. The goals is to uncovering patterns of customer behavior when using the e-commerce",
     "description": "Analyzed 100k+ transaction records from Olist's Brazilian e-commerce platform to answer business question about how is customer behavior, delivery performance, and payment preferences. The goal was to get a key insight that could help improve customer satisfaction and business strategy",
     "highlights": [
       "Peak orders of shopping occurs Monday to Wednesday between 9AM - 6 PM, suggesting weekday have the highest transaction volume",
@@ -24,7 +24,7 @@
     "image": "../assets/image/database_cafe.png",
     "category": "web",
     "stack": ["Python", "Flask", "SQLite", "HTML/CSS/JS"],
-    "summary": "this is my placeholder 2, under construction :)",
+    "summary": "A lightweight web-based database application built for a cafe startup to integrating inventory, menu, and sales management into a system with automated ingredient tracking on every transaction",
     "description": "Built a lightweight web-based database application for a cafe startup to manage day-to-day operational. The app connects inventory, menu, and sales, where inputting a sales automatically deducts ingredients that listed in inventory based on the recipe linked on menu item.",
     "highlights": [
       "Inventory management with low-stock and unavailable menu alerts visible on the dashboard",
@@ -41,7 +41,7 @@
     "image": "../assets/image/personal_website.png",
     "category": "web",
     "stack": ["HTML", "CSS", "JS", "JSON"],
-    "summary": "this is my placeholder 3 , under construction :)",
+    "summary": "This is my personal website as you can see right now..",
     "description": "Personal website that allows myself to introduce myself, showcase my projects, and documenting my life journey so far.",
     "highlights": [
       "I built this with my zero experience and self taught programming skills",
@@ -57,14 +57,42 @@
     "badgeIcon": "fa-solid fa-book",
     "image": "../assets/image/skripsi.png",
     "category": "other",
-    "stack": ["HTML", "CSS", "JS", "JSON"],
-    "summary": "this is my placeholder 4, under construction :)",
-    "description": "Personal website that allows myself to introduce myself, showcase my projects, and documenting my life journey so far.",
+    "stack": ["CRD", "RSM", "Anova", "Minitab"],
+    "summary": "An experimental study comparing three alternatives of ferromagnetic materials as induction stove converter plates to analyze energy consumption and efficiency to identify the most viable alternative for low-income households",
+    "description": "Experiment about analyzing the performan of three affordable economic ferromagnetic material, mild steel, galvanized steel, and galvannealed steel as a induction stove plates that evaluated based on energy consumption, efficiency, and production cost. The study aims to provide a  cost-effective alternative besides commercial converters for low-income households.",
     "highlights": [
-      "I built this with my zero experience and self taught programming skills",
-      "Took way longer than expected because i really need to understand the line code..",
-      "Still under construction, just like me right now."
+      "Designed a Completely Randomized Design (CRD) experiment boiling 1 liter of water across factor of power levels (500W and 1000W) and experiment duration (300-600 sec), with data optimized using Response Surface Methodology in Minitab Software",
+      "Galvanized steel achieved the highest composite desirability score (0.761) and the best energy efficiency (40,99%), making it to be the top material performed from an energy.",
+      "Galvannealed steel demonstrated a better thermal durability between other materials and have the lowest energy consumption (72.296 Wh), making it the best choice for long term."
     ],
     "report": "https://drive.google.com/file/d/1MUT7H03IIml794FcHqja1-5nZ-DQDdcQ/view?usp=sharing"
+  },
+  {
+    "id": "comingsun1",
+    "title": "Coming Soon!",
+    "badge": "Under Construct",
+    "badgeIcon": "fa-solid fa-compress",
+    "image": "../assets/image/coming_soon.png",
+    "category": "other",
+    "stack": ["soon"],
+    "summary": "this is summary",
+    "description": "this is description",
+    "highlights": [
+      "this is highlight"
+    ]
+  },
+  {
+    "id": "comingsun2",
+    "title": "Coming Soon!",
+    "badge": "Under Construct",
+    "badgeIcon": "fa-solid fa-compress",
+    "image": "../assets/image/coming_soon.png",
+    "category": "other",
+    "stack": ["soon"],
+    "summary": "this is summary",
+    "description": "this is description",
+    "highlights": [
+      "this is highlight"
+    ]
   }
 ]

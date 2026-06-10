@@ -432,20 +432,6 @@ nav {
   transform: translateX(0);
 }
 
-.coming-badge {
-  display: inline-flex;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: #8a9ab0;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.3rem 0.75rem;
-  border-radius: 100px;
-  width: fit-content;
-}
-
 /* ─── Index Projects Section (legacy .projects-list layout) ─── */
 #projects {
   padding: 6rem 10%;
