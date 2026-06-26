@@ -68,17 +68,24 @@
     "report": "https://drive.google.com/file/d/1MUT7H03IIml794FcHqja1-5nZ-DQDdcQ/view?usp=sharing"
   },
   {
-    "id": "comingsun1",
-    "title": "Coming Soon!",
-    "badge": "Under Construct",
-    "badgeIcon": "fa-solid fa-compress",
-    "image": "../assets/image/coming_soon.png",
-    "category": "other",
-    "stack": ["soon"],
-    "summary": "this is summary",
-    "description": "this is description",
+    "id": "vrprouting",
+    "title": "Vehicle Routing Optimization",
+    "badge": "Web",
+    "badgeIcon": "fa-solid fa-globe",
+    "image": "../assets/image/vrp_dashboard.png",
+    "category": "Web",
+    "stack": ["Python", "Javascript", "HTML", "CSS"],
+    "summary": "A web about Vehicle Routing Problem (VRP) dashboard built for a logistics company to optimize multi-vehicle delivery routes using the Clarke-Wright Savings Algorithm",
+    "description": "Full Stack VRP dashboard (heavy javascript) that enables logistics planner to optimize delivery routes across multiple vehicles. The system incorporates real-world road networks using OSRM routing engine based on vehicle assignment by demand (tonase) and volume. Thus, the web provides delivery history tracking with Excel export capability.",
     "highlights": [
-      "this is highlight"
+      "Implemented Clarke-Wright Savings Algorithm in Python to generate optimal multi-vehicle routes, implemented in web to reduce planning time for daily delivery operations.",
+      "Using OSRM routing engine with Leaflet.js to render real-road map routes with delivery stop markers and estimated travel time.",
+      "Built using Flask, SQLAlchemy, and Bootstrap with features including a step by step to calculate optimal route."
+    ],
+    "preview": [
+      "../assets/image/vrp_route/vrp2.png",
+      "../assets/image/vrp_route/vrp3.png",
+      "../assets/image/vrp_route/vrp4.png"
     ]
   },
   {
