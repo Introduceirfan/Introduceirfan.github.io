@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Project | Febrian Naufal Irfansyah</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="../assets/static/style.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="../assets/image/icon/apple-touch-icon.png">
@@ -227,6 +228,7 @@
           return;
         }
 
+        
         // Update page title
         document.title = `${project.title} | Febrian Naufal Irfansyah`;
 
@@ -243,8 +245,10 @@
               </div>
               <div class="detail-section-body" style="display:flex; flex-direction:column; gap:1rem;">
                 ${project.preview.map(src => `
-                    <img src="${src}" style="width:100%; border-radius:10px; border:1px solid #2a2a2a; object-fit:cover;"/>
-                `).join('')}
+                    <a href="${src}" class="glightbox">
+                      <img src="${src}" style="width:100%; border-radius:10px; border:1px solid #2a2a2a; object-fit:cover;"/>
+                    </a>
+                      `).join('')}
               </div>
             </div>`
             : ''
@@ -302,14 +306,19 @@
           </div>
 
            ${previewHTML}
-
+           
           <div class="detail-actions">
             ${githubBtn}
             ${demoBtn}
             ${reportBtn}
           </div>
         `;
+        if (window.lightbox) {
+        window.lightbox.destroy()
+        }
+        window.lightbox = GLightbox({ selector: '.glightbox' })
       })
+      
       .catch(() => {
         document.getElementById('detailContent').innerHTML = `
           <div class="not-found">
@@ -320,6 +329,11 @@
           </div>`;
       });
   </script>
-
+  <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      window.lightbox = GLightbox({ selector: '.glightbox' })
+    })
+</script>
 </body>
 </html>
