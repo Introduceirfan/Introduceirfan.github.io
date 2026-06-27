@@ -73,7 +73,7 @@
     "badge": "Web",
     "badgeIcon": "fa-solid fa-globe",
     "image": "../assets/image/vrp_dashboard.png",
-    "category": "Web",
+    "category": "web",
     "stack": ["Python", "Javascript", "HTML", "CSS"],
     "summary": "A web about Vehicle Routing Problem (VRP) dashboard built for a logistics company to optimize multi-vehicle delivery routes using the Clarke-Wright Savings Algorithm",
     "description": "Full Stack VRP dashboard (heavy javascript) that enables logistics planner to optimize delivery routes across multiple vehicles. The system incorporates real-world road networks using OSRM routing engine based on vehicle assignment by demand (tonase) and volume. Thus, the web provides delivery history tracking with Excel export capability.",

@@ -656,6 +656,38 @@ nav {
   margin-top: 1rem;
 }
 
+.cert-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cert-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: #c0c0c0;
+}
+
+.cert-list li a {
+  color: #4ade80;
+  text-decoration: none;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  margin-left: 1rem;
+  transition: opacity 0.2s;
+}
+
+.cert-list li a:hover {
+  opacity: 0.7;
+}
+
 /* Skills grid */
 .skills-grid {
   display: grid;
