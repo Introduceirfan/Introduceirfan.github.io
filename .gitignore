@@ -22,3 +22,4 @@ migrations/
 config.py
 .claudecodesignore
 *.Identifier
+.github/* 
