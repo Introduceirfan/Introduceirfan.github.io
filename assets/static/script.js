@@ -83,9 +83,9 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 //slider hero homepage
 const sliderImages = [
-  'assets/image/slider1.PNG',
-  'assets/image/slider2.PNG',
-  'assets/image/slider3.PNG'
+  'assets/image/slider1.png',
+  'assets/image/slider2.png',
+  'assets/image/slider3.png'
 ];
 
 let currentSlide = 0
@@ -101,3 +101,55 @@ setInterval(() => {
     heroImg.classList.remove('fade-out');
   }, 600);
 }, 3000);
+
+const faces = [
+  'assets/image/notion_smile.png',
+  'assets/image/notion_smiley.png',
+];
+
+let currentFace = 0;
+
+document.getElementById('navLogo').addEventListener('mouseover', () => {
+  let newIndex;
+  do {
+    newIndex = Math.floor(Math.random() * faces.length);
+  } while (newIndex === currentFace);
+
+  currentFace = newIndex;
+  document.getElementById('navFace').src = faces[currentFace];
+
+document.getElementById('navLogo').addEventListener('mouseleave', () => {
+  document.getElementById('navFace').src = faces[0];
+  currentFace = 0;
+});
+
+});
+
+fetch('data/projects.json')
+  .then(res => res.json())
+  .then(projects => {
+    const featured = projects.filter(p => ['stock2', 'vrprouting'].includes(p.id));
+    const container = document.getElementById('projectsHome');
+    
+    container.innerHTML = featured.map(p => `
+      <div class="project-item fade-in">
+        <div class="project-image">
+          <img src="${p.image.replace('../', '')}" alt="${p.title}" />
+        </div>
+        <div class="project-info">
+          <h3>${p.title}</h3>
+          <p>${p.summary}</p>
+          <a href="pages/project-detail.html?id=${p.id}">View Project →</a>
+        </div>
+      </div>
+    `).join('');
+
+    container.insertAdjacentHTML('afterend', `
+      <div style="text-align: center; margin-top: 5rem;">
+        <a href="pages/projects.html" class="see-more">→ See all projects ←</a>
+      </div>
+    `);
+
+    // fade-in observer
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  });

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>IntroduceIrfan</title>
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link rel="stylesheet" href="assets/static/style.css" />
     <link rel="apple-touch-icon" sizes="180x180" href="assets/image/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/image/icon/favicon-32x32.png">
@@ -13,7 +14,12 @@
 </head>
 <body>
     <nav>
-        <div class="nav-logo">Introduce Irfan</div>
+        <a href="index.html" style="text-decoration: none;">
+            <div class="nav-logo" id="navLogo">
+                <img src="assets/image/notion_smile.png" class="nav-avatar" id="navFace" alt="avatar">
+                Introduce Irfan
+            </div>
+        </a>
         <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
             <span></span><span></span><span></span>
         </button>
@@ -28,79 +34,22 @@
     <!--Home-->
     <section id="home">
         <div class="hero-content fade-in">
-            <p class="hero-greeting">Hello, I'm Irfan</p>
-            <h2 class="hero-tagline">Curious Enough </h2> 
-            <h2 class="hero-tagline">To Build Meaningful Things</h2>
+            <p class="hero-greeting">Hello, I'm <span>Irfan!</span></p>
+            <h2 class="hero-tagline">“Curious Enough </h2> 
+            <h2 class="hero-tagline">To Build Meaningful Things”</h2>
         </div>
-
         <div class="hero-image fade-in">
-            <img id="heroSlider" src="assets/image/slider1.PNG" alt="Project Snapshot">
+            <img id="heroSlider" src="assets/image/slider1.png" alt="Project Snapshot">
         </div>
     </section>
 
     <!--Projects-->
     <section id="projects">
         <div class="projects-container fade-in">
-            <p class="section-label">Recent of My Work!</p>
-            <h2 class="section-title">Explore My Portfolio</h2>
-
-            <div class="projects-list">
+            <p class="section-label">Projects</p>
+            <h2 class="section-title">What I've been working on?</h2>
+            <div class="projects-list" id="projectsHome">
                 
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/image/data_analysis.png" />
-                    </div>
-                    <div class="project-info">
-                        <span class="project-label">Data</span>
-                        <h3>E-Commerce Sales Analysis</h3>
-                        <p>Exploratory data analysis on around 100k transaction records from Brazilian e-commerce platform. The goals is to uncovering patterns of customer behavior when using the e-commerce</p>
-                        <div class="project-stack">
-                            <span>Python</span>
-                            <span>Pandas</span>
-                            <span>Seaborn</span>
-                        </div>
-                        <a href="pages/project-detail.html?id=olist" class="btn-primary">View Project</a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/image/database_cafe.png" />
-                    </div>
-                    <div class="project-info">
-                        <span class="project-label">Website</span>
-                        <h3>Cafe Management Database Web-Based App</h3>
-                        <p>A lightweight web-based database application built for a cafe startup to integrating inventory, menu, and sales management into a system with automated ingredient tracking on every transaction</p>
-                        <div class="project-stack">
-                            <span>Python</span>
-                            <span>Flask</span>
-                            <span>SQLite</span>
-                            <span>HTML/CSS/JS</span>
-                        </div>
-                        <a href="pages/project-detail.html?id=cafe" class="btn-primary">View Project</a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="assets/image/personal_website.png" />
-                    </div>
-                    <div class="project-info">
-                        <span class="project-label">Website</span>
-                        <h3>Introduce Irfan</h3>
-                        <p>This is my personal website as you can see right now..</p>
-                        <div class="project-stack">
-                            <span>HTML</span>
-                            <span>CSS</span>
-                            <span>JS</span>
-                            <span>JSON</span>
-                        </div>
-                        <a href="pages/project-detail.html?id=personalweb" class="btn-primary">View Project</a>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -110,25 +59,18 @@
     <div class="contact-container fade-in">
       <p class="section-label">Still Curious?</p>
       <h2 class="section-title">Get In Touch!</h2>
-      <div class="contact-cards">
-        <a href="mailto:febriannaufalirfansyah@gmail.com" class="contact-card">
-            <i class="fa-solid fa-envelope"></i>
-            <h4>Email</h4>
-            <p>Send a message!</p>
-        </a>
-
-        <a href="https://www.linkedin.com/in/febriannaufalirfansyah/" target="_blank" class="contact-card">
-            <i class="fa-brands fa-linkedin"></i>
-            <h4>Linkedin</h4>
-            <p>Let's Connect!</p>
-        </a>
-
-        <a href="https://github.com/Introduceirfan" class="contact-card">
-            <i class="fa-brands fa-github"></i>
-            <h4>Github</h4>
-            <p>See my streak!</p>
-        </a>
-      </div> 
+      <p class="contact-desc">Feel free to reach out! Always open for opportunities, collaborations, or just a good conversation.</p>
+        <div class="contact-icons">
+            <a href="https://instagram.com/introduceirfan" target="_blank" title="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/febriannaufalirfansyah/" target="_blank" title="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/Introduceirfan" target="_blank" title="GitHub">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
     </div>
   </section>
 
