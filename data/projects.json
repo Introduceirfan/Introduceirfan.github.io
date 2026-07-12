@@ -1,27 +1,39 @@
 [
   {
-    "id": "olist",
-    "title": "E-Commerce Sales Analysis (Olist)",
-    "badge": "Data Analysis",
-    "badgeIcon": "fa-solid fa-database",
-    "image": "../assets/image/data_analysis.png",
-    "category": "data",
-    "stack": ["Python", "Pandas", "Seaborn"],
-    "summary": "Exploratory data analysis on around 100k transaction records from Brazilian e-commerce platform. The goals is to uncovering patterns of customer behavior when using the e-commerce",
-    "description": "Analyzed 100k+ transaction records from Olist's Brazilian e-commerce platform to answer business question about how is customer behavior, delivery performance, and payment preferences. The goal was to get a key insight that could help improve customer satisfaction and business strategy",
-    "highlights": [
-      "Peak orders of shopping occurs Monday to Wednesday between 9AM - 6 PM, suggesting weekday have the highest transaction volume",
-      "Delivery speed have positive impacts on satisfaction. Orders that arriving 13 days early have average 5-star ratings, while 1-star rating occurs when orders arrive only 4 days early. This suggesting customer expectation play a key role",
-      "Credit card is the dominant payment method at 76% of transactions and carrying the highest average transaction value"
+    "id": "vrprouting",
+    "title": "Vehicle Routing Optimization",
+    "summary": "A web about Vehicle Routing Problem (VRP) built for a logistics company to optimize multi-vehicle delivery routes.",
+    "description": "Full Stack VRP dashboard (heavy javascript) that enables logistics planner to optimize delivery routes across multiple vehicles. The system incorporates real-world road networks using OSRM routing engine based on vehicle assignment by demand (tonase) and volume. Thus, the web provides delivery history tracking with Excel export capability.",
+    "image": "../assets/image/slider1.png",
+    "preview": [
+      "../assets/image/vrp_route/vrp2.png",
+      "../assets/image/vrp_route/vrp3.png"
     ],
-    "github": "https://github.com/Introduceirfan/KagglingSelf/tree/main/Olist_brazil"
+    "captions": [
+      "penjelasan screen1",
+      "penjelasan screen2"
+    ]
+  },
+  {
+    "id": "stock2",
+    "title": "Inventory Management System",
+    "badge": "Under Construct",
+    "badgeIcon": "fa-solid fa-compress",
+    "image": "../assets/image/slider2.png",
+    "category": "other",
+    "stack": ["soon"],
+    "summary": "A digital internal platform built to track company stock, log expenses, and handle monthly stock checks in one place.",
+    "description": "this is description",
+    "highlights": [
+      "this is highlight"
+    ]
   },
   {
     "id": "cafe",
     "title": "Cafe Management Web Application",
     "badge": "Web",
     "badgeIcon": "fa-solid fa-globe",
-    "image": "../assets/image/database_cafe.png",
+    "image": "../assets/image/project2.png",
     "category": "web",
     "stack": ["Python", "Flask", "SQLite", "HTML/CSS/JS"],
     "summary": "A lightweight web-based database application built for a cafe startup to integrating inventory, menu, and sales management into a system with automated ingredient tracking on every transaction",
@@ -38,7 +50,7 @@
     "title": "Personal Website",
     "badge": "Web",
     "badgeIcon": "fa-solid fa-globe",
-    "image": "../assets/image/personal_website.png",
+    "image": "../assets/image/project1.png",
     "category": "web",
     "stack": ["HTML", "CSS", "JS", "JSON"],
     "summary": "This is my personal website as you can see right now..",
@@ -66,40 +78,6 @@
       "Galvannealed steel demonstrated a better thermal durability between other materials and have the lowest energy consumption (72.296 Wh), making it the best choice for long term."
     ],
     "report": "https://drive.google.com/file/d/1MUT7H03IIml794FcHqja1-5nZ-DQDdcQ/view?usp=sharing"
-  },
-  {
-    "id": "vrprouting",
-    "title": "Vehicle Routing Optimization",
-    "badge": "Web",
-    "badgeIcon": "fa-solid fa-globe",
-    "image": "../assets/image/slider1.png",
-    "category": "web",
-    "stack": ["Python", "Javascript", "HTML", "CSS"],
-    "summary": "A web about Vehicle Routing Problem (VRP) built for a logistics company to optimize multi-vehicle delivery routes.",
-    "description": "Full Stack VRP dashboard (heavy javascript) that enables logistics planner to optimize delivery routes across multiple vehicles. The system incorporates real-world road networks using OSRM routing engine based on vehicle assignment by demand (tonase) and volume. Thus, the web provides delivery history tracking with Excel export capability.",
-    "highlights": [
-      "Implemented Clarke-Wright Savings Algorithm in Python to generate optimal multi-vehicle routes, implemented in web to reduce planning time for daily delivery operations.",
-      "Using OSRM routing engine with Leaflet.js to render real-road map routes with delivery stop markers and estimated travel time.",
-      "Built using Flask, SQLAlchemy, and Bootstrap with features including a step by step to calculate optimal route."
-    ],
-    "preview": [
-      "../assets/image/vrp_route/vrp2.png",
-      "../assets/image/vrp_route/vrp3.png",
-      "../assets/image/vrp_route/vrp4.png"
-    ]
-  },
-  {
-    "id": "stock2",
-    "title": "Inventory Management System",
-    "badge": "Under Construct",
-    "badgeIcon": "fa-solid fa-compress",
-    "image": "../assets/image/slider2.png",
-    "category": "other",
-    "stack": ["soon"],
-    "summary": "A digital internal platform built to track company stock, log expenses, and handle monthly stock checks in one place.",
-    "description": "this is description",
-    "highlights": [
-      "this is highlight"
-    ]
   }
+  
 ]

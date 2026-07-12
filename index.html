@@ -10,7 +10,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="assets/image/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/image/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/image/icon/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
     <nav>
@@ -78,5 +77,37 @@
     </footer>
 
     <script src="assets/static/script.js"></script>
+
+    <script>
+        fetch('data/projects.json')
+            .then(res => res.json())
+            .then(projects => {
+                const featured = projects.filter(p => ['stock2', 'vrprouting'].includes(p.id));
+                const container = document.getElementById('projectsHome');
+                
+                container.innerHTML = featured.map(p => `
+                <div class="project-item fade-in">
+                    <div class="project-image">
+                    <img src="${p.image.replace('../', '')}" alt="${p.title}" />
+                    </div>
+                    <div class="project-info">
+                    <h3>${p.title}</h3>
+                    <p>${p.summary}</p>
+                    <a href="pages/project-detail.html?id=${p.id}">View Project →</a>
+                    </div>
+                </div>
+                `).join('');
+
+                container.insertAdjacentHTML('afterend', `
+                <div style="text-align: center; margin-top: 5rem;">
+                    <a href="pages/projects.html" class="see-more">→ See all projects ←</a>
+                </div>
+                `);
+
+                // fade-in observer
+                document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+            });
+    </script>
+    
 </body>
 </html>

@@ -10,11 +10,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/image/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/image/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/image/icon/favicon-16x16.png">
-    <link rel="manifest" href="site.webmanifest">
 </head>
 <body>
     <nav>
-        <a href="index.html" style="text-decoration: none;">
+        <a href="../index.html" style="text-decoration: none;">
             <div class="nav-logo" id="navLogo">
                 <img src="../assets/image/notion_smile.png" class="nav-avatar" id="navFace" alt="avatar">
                 Introduce Irfan
@@ -31,115 +30,91 @@
     </nav>
 
   <!-- HEADER -->
-  <section class="page-header fade-in" style="padding-top: 100px;">
-    <span class="label">Projects</span>
-    <h1>Explore My Portfolio</h1>
-    <p>I build things. Sometimes they even work. Or the opposite..</p>
+  <section class="project-header fade-in">
+    <p class="projects-quote">They say, <span>"When there's a will, there's a way."</span></p>
+    <h1>So I took some projects.</h1>
+    <p class="project-label">Sometimes they even work. Or, well... the opposite.</p>
   </section>
-
-  <!-- FILTER -->
-  <div class ="filter-container fade-in" id="filterContainer"></div>
 
   <!--Projects grid-->
   <section class="projects-section">
-    <div class="projects-grid" id="projectsGrid"></div>
+    <div class="projects-list" id="projectsGrid"></div>
   </section>
-
-<!-- Contact -->
-  <section id="contact">
-    <div class="contact-container fade-in">
-      <p class="section-label">Still Curious?</p>
-      <h2 class="section-title">Get In Touch!</h2>
-      <div class="contact-cards">
-        <a href="mailto:febriannaufalirfansyah@gmail.com" class="contact-card">
-            <i class="fa-solid fa-envelope"></i>
-            <h4>Email</h4>
-            <p>Send a message!</p>
-        </a>
-
-        <a href="https://www.linkedin.com/in/febriannaufalirfansyah/" target="_blank" class="contact-card">
-            <i class="fa-brands fa-linkedin"></i>
-            <h4>Linkedin</h4>
-            <p>Let's Connect!</p>
-        </a>
-
-        <a href="https://github.com/Introduceirfan" class="contact-card">
-            <i class="fa-brands fa-github"></i>
-            <h4>Github</h4>
-            <p>See my streak!</p>
-        </a>
-      </div> 
-    </div>
-  </section> 
-
-  <footer>
+ 
+  <footer class="footer-right">
     <p>&copy; 2026 Febrian Naufal Irfansyah</p>
+
+    <div class="footer-icons">
+        <a href="https://instagram.com/introduceirfan" target="_blank" title="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/febriannaufalirfansyah/" target="_blank" title="LinkedIn">
+            <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://github.com/Introduceirfan" target="_blank" title="GitHub">
+            <i class="fa-brands fa-github"></i>
+        </a>
+    </div>
+
   </footer>
 
   <script>
-    // Mobile nav toggle
+    //mobile toggleee 
+
     const navToggle = document.getElementById('navToggle');
     const navLinks = document.getElementById('navLinks');
     navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-    // Filter
-    //fetch projects json
     fetch('../data/projects.json')
       .then(res => res.json())
       .then(projects => {
-        //auto generate filter button
-        const categories = ['all', ...new Set(projects.map(p => p.category))];
-        const filterContainer = document.getElementById('filterContainer');
-        filterContainer.innerHTML = categories.map(cat => `
-          <button class="filter-btn ${cat === 'all' ? 'active' : ''}" data-filter="${cat}">
-            ${cat.charAt(0).toUpperCase() + cat.slice(1)}
-            </button>
-          `).join('');
-
-          //generate project card
-          const grid = document.getElementById('projectsGrid');
-          grid.innerHTML = projects.map(p => `
-          <a href="project-detail.html?id=${p.id}" class="project-card fade-in" data-category="${p.category}">
+        const container = document.getElementById('projectsGrid');
+        
+        container.innerHTML = projects.map(p => `
+          <div class="project-item fade-in">
             <div class="project-image">
               <img src="${p.image}" alt="${p.title}" />
             </div>
             <div class="project-info">
-              <span class="project-badge"><i class="${p.badgeIcon}"></i> ${p.badge}</span>
               <h3>${p.title}</h3>
               <p>${p.summary}</p>
-              <div class="project-stack">
-                ${p.stack.map(s => `<span>${s}</span>`).join('')}
-              </div>
-              <div class="project-link-hint">
-                View Project <i class="fa-solid fa-arrow-right"></i>
-              </div>
+              <a href="project-detail.html?id=${p.id}">View Project →</a>
             </div>
-          </a>
+          </div>
         `).join('');
 
-        //Filter logic
-        filterContainer.addEventListener('click', e => {
-          if (!e.target.classList.contains('filter-btn')) return;
-          document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-          e.target.classList.add('active');
+        container.insertAdjacentHTML('afterend', `
+          <p class="projects-more">& many more that probably shouldn't see the light of day.</p>
+        `);
 
-          const filter = e.target.dataset.filter;
-          document.querySelectorAll('#projectsGrid .project-card').forEach(card => {
-            filter === 'all' || card.dataset.category === filter
-              ? card.classList.remove('hidden')
-              : card.classList.add('hidden');
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) entry.target.classList.add('visible');
           });
-        });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
 
-      // Fade-in on scroll
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-          }
-        });
-      }, { threshold: 0.1 });
-      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    const faces = [
+      '../assets/image/notion_smile.png',
+      '../assets/image/notion_smiley.png',
+    ];
+
+    let currentFace = 0;
+
+    const navLogoEl = document.getElementById('navLogo');
+    navLogoEl.addEventListener('mouseover', () => {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * faces.length);
+      } while (newIndex === currentFace);
+      currentFace = newIndex;
+      document.getElementById('navFace').src = faces[currentFace];
+    });
+
+    navLogoEl.addEventListener('mouseleave', () => {
+      document.getElementById('navFace').src = faces[0];
+      currentFace = 0;
     });
   </script>
 

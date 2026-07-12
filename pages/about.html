@@ -10,11 +10,10 @@
     <link rel="apple-touch-icon" sizes="180x180" href="../assets/image/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../assets/image/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../assets/image/icon/favicon-16x16.png">
-    <link rel="manifest" href="../site.webmanifest">
 </head>
 <body>
     <nav>
-        <a href="index.html" style="text-decoration: none;">
+        <a href="../index.html" style="text-decoration: none;">
             <div class="nav-logo" id="navLogo">
                 <img src="../assets/image/notion_smile.png" class="nav-avatar" id="navFace" alt="avatar">
                 Introduce Irfan
@@ -94,7 +93,7 @@
       const container = document.getElementById('faqList');
       container.innerHTML = faqs.map((faq, i) => `
         <div class="faq-item">
-          <button class="faq-question" data-index="${i}">${faq.question}</button>
+          <button class="faq-question" data-index="${i}">${faq.question} <span class="faq-arrow">↓</span></button>
           <div class="faq-answer" id="faq-answer-${i}"><p>${faq.answer}</p></div>
         </div>
       `).join('');
@@ -111,6 +110,27 @@
       });
     });
     
+    const faces = [
+      '../assets/image/notion_smile.png',
+      '../assets/image/notion_smiley.png',
+    ];
+
+    let currentFace = 0;
+
+    const navLogoEl = document.getElementById('navLogo');
+    navLogoEl.addEventListener('mouseover', () => {
+      let newIndex;
+      do {
+        newIndex = Math.floor(Math.random() * faces.length);
+      } while (newIndex === currentFace);
+      currentFace = newIndex;
+      document.getElementById('navFace').src = faces[currentFace];
+    });
+
+    navLogoEl.addEventListener('mouseleave', () => {
+      document.getElementById('navFace').src = faces[0];
+      currentFace = 0;
+    });
   </script>
 
 </body>

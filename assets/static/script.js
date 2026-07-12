@@ -42,13 +42,15 @@ window.addEventListener('scroll', () => {
 
 // Home Slider
 const bgImages = document.querySelectorAll('.hero-bg img');
-let currentBg = 0;
+if (bgImages.length > 0) {
+  let currentBg = 0;
 
-setInterval(() => {
-  bgImages[currentBg].classList.remove('active');
-  currentBg = (currentBg + 1) % bgImages.length;
-  bgImages[currentBg].classList.add('active');
-}, 4000);
+  setInterval(() => {
+    bgImages[currentBg].classList.remove('active');
+    currentBg = (currentBg + 1) % bgImages.length;
+    bgImages[currentBg].classList.add('active');
+  }, 4000);
+}
 
 // Mobile nav
 const navToggle = document.getElementById('navToggle');
@@ -91,16 +93,18 @@ const sliderImages = [
 let currentSlide = 0
 const heroImg = document.getElementById('heroSlider');
 
-setInterval(() => {
-  heroImg.classList.add('fade-out');
+if (heroImg) {
+  setInterval(() => {
+    heroImg.classList.add('fade-out');
 
-  setTimeout( () => {
-    currentSlide = (currentSlide + 1) % sliderImages.length;
-    heroImg.src = sliderImages[currentSlide];
+    setTimeout( () => {
+      currentSlide = (currentSlide + 1) % sliderImages.length;
+      heroImg.src = sliderImages[currentSlide];
 
-    heroImg.classList.remove('fade-out');
-  }, 600);
-}, 3000);
+      heroImg.classList.remove('fade-out');
+    }, 600);
+  }, 3000);
+}
 
 const faces = [
   'assets/image/notion_smile.png',
@@ -125,31 +129,3 @@ document.getElementById('navLogo').addEventListener('mouseleave', () => {
 
 });
 
-fetch('data/projects.json')
-  .then(res => res.json())
-  .then(projects => {
-    const featured = projects.filter(p => ['stock2', 'vrprouting'].includes(p.id));
-    const container = document.getElementById('projectsHome');
-    
-    container.innerHTML = featured.map(p => `
-      <div class="project-item fade-in">
-        <div class="project-image">
-          <img src="${p.image.replace('../', '')}" alt="${p.title}" />
-        </div>
-        <div class="project-info">
-          <h3>${p.title}</h3>
-          <p>${p.summary}</p>
-          <a href="pages/project-detail.html?id=${p.id}">View Project →</a>
-        </div>
-      </div>
-    `).join('');
-
-    container.insertAdjacentHTML('afterend', `
-      <div style="text-align: center; margin-top: 5rem;">
-        <a href="pages/projects.html" class="see-more">→ See all projects ←</a>
-      </div>
-    `);
-
-    // fade-in observer
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  });
