@@ -144,7 +144,7 @@ nav {
 /* ─── Home / Hero ─── */
 
 #home {
-  min-height: 100vh;
+  min-height: 80vh;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -164,10 +164,6 @@ nav {
 
 .hero-greeting span {
   font-weight: bold;
-}
-
-.hero-name span {
-  color: #4ade80;
 }
 
 .hero-tagline {
@@ -807,6 +803,32 @@ nav {
 .faq-question.open .faq-arrow {
   transform: rotate(180deg);
 }
+
+.cv-section {
+  margin-top: 2rem;
+  padding-top: 2rem;
+}
+
+.cv-section p {
+  font-size: 1rem;
+  color: #888888;
+  margin-bottom: 0.75rem;
+}
+
+.cv-link {
+  color: #0a0a0a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-bottom: 1px solid #0a0a0a;
+  padding-bottom: 2px;
+  transition: opacity 0.2s;
+}
+
+.cv-link:hover {
+  opacity: 0.5;
+}
+
 /* ─── Footer ─── */
 footer {
   text-align: center;
@@ -876,7 +898,6 @@ footer.footer-right {
   }  
 
   .nav-overlay.open {
-    display: open;
     opacity: 1;
     pointer-events: all;
     transform: translateY(0);
