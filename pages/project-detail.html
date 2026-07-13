@@ -117,6 +117,39 @@
           imgs[current].classList.add('active');
           if (caption && project.captions) caption.textContent = project.captions[current];
         });
+
+        container.querySelectorAll('.slide-img').forEach(img => {
+            img.style.cursor = 'zoom-in';
+            img.addEventListener('click', () => {
+              const overlay = document.createElement('div');
+              overlay.className = 'lightbox-overlay';
+              overlay.innerHTML = `<img src="${img.src}" class="lightbox-img" />`;
+              document.body.appendChild(overlay);
+              overlay.addEventListener('click', () => overlay.remove()); 
+            });
+        });
+      });
+
+      const faces = [
+      '../assets/image/notion_smile.png',
+      '../assets/image/notion_smiley.png',
+      ];
+
+      let currentFace = 0;
+
+      const navLogoEl = document.getElementById('navLogo');
+      navLogoEl.addEventListener('mouseover', () => {
+        let newIndex;
+        do {
+          newIndex = Math.floor(Math.random() * faces.length);
+        } while (newIndex === currentFace);
+        currentFace = newIndex;
+        document.getElementById('navFace').src = faces[currentFace];
+      });
+
+      navLogoEl.addEventListener('mouseleave', () => {
+        document.getElementById('navFace').src = faces[0];
+        currentFace = 0;
       });
 </script>
 </body>

@@ -17,65 +17,63 @@
   {
     "id": "stock2",
     "title": "Inventory Management System",
-    "badge": "Under Construct",
-    "badgeIcon": "fa-solid fa-compress",
     "image": "../assets/image/slider2.png",
-    "category": "other",
-    "stack": ["soon"],
     "summary": "A digital internal platform built to track company stock, log expenses, and handle monthly stock checks in one place.",
     "description": "this is description",
-    "highlights": [
-      "this is highlight"
+    "preview": [
+      "../assets/image/vrp_route/vrp2.png",
+      "../assets/image/vrp_route/vrp3.png"
+    ],
+    "captions": [
+      "penjelasan screen1",
+      "penjelasan screen2"
     ]
   },
   {
     "id": "cafe",
     "title": "Cafe Management Web Application",
-    "badge": "Web",
-    "badgeIcon": "fa-solid fa-globe",
     "image": "../assets/image/project2.png",
-    "category": "web",
-    "stack": ["Python", "Flask", "SQLite", "HTML/CSS/JS"],
     "summary": "A lightweight web-based database application built for a cafe startup to integrating inventory, menu, and sales management into a system with automated ingredient tracking on every transaction",
     "description": "Built a lightweight web-based database application for a cafe startup to manage day-to-day operational. The app connects inventory, menu, and sales, where inputting a sales automatically deducts ingredients that listed in inventory based on the recipe linked on menu item.",
-    "highlights": [
-      "Inventory management with low-stock and unavailable menu alerts visible on the dashboard",
-      "Menu and recipe management, each menu is linked to ingredients listed in inventory",
-      "Sales input that automatically tracks daily transaction history and deducts ingredient availability based on recipe."
+    "preview": [
+      "../assets/image/vrp_route/vrp2.png",
+      "../assets/image/vrp_route/vrp3.png"
+    ],
+    "captions": [
+      "penjelasan screen1",
+      "penjelasan screen2"
     ],
     "github": "https://github.com/Introduceirfan/Database_app"
   },
   {
     "id": "personalweb",
     "title": "Personal Website",
-    "badge": "Web",
-    "badgeIcon": "fa-solid fa-globe",
     "image": "../assets/image/project1.png",
-    "category": "web",
-    "stack": ["HTML", "CSS", "JS", "JSON"],
     "summary": "This is my personal website as you can see right now..",
     "description": "Personal website that allows myself to introduce myself, showcase my projects, and documenting my life journey so far.",
-    "highlights": [
-      "I built this with my zero experience and self taught programming skills",
-      "Took way longer than expected because i really need to understand the line code..",
-      "Still under construction, just like me right now."
+    "preview": [
+      "../assets/image/vrp_route/vrp2.png",
+      "../assets/image/vrp_route/vrp3.png"
+    ],
+    "captions": [
+      "penjelasan screen1",
+      "penjelasan screen2"
     ],
     "github": "https://github.com/Introduceirfan/Introduceirfan.github.io"
   },
   {
     "id": "skripsi",
     "title": "Performance Analysis of Induction Stove Converter Materials Based on Energy Consumption, Efficiency, and Cost",
-    "badge": "Thesis",
-    "badgeIcon": "fa-solid fa-book",
     "image": "../assets/image/skripsi.png",
-    "category": "other",
-    "stack": ["CRD", "RSM", "Anova", "Minitab"],
     "summary": "An experimental study comparing three alternatives of ferromagnetic materials as induction stove converter plates to analyze energy consumption and efficiency to identify the most viable alternative for low-income households",
     "description": "Experiment about analyzing the performan of three affordable economic ferromagnetic material, mild steel, galvanized steel, and galvannealed steel as a induction stove plates that evaluated based on energy consumption, efficiency, and production cost. The study aims to provide a  cost-effective alternative besides commercial converters for low-income households.",
-    "highlights": [
-      "Designed a Completely Randomized Design (CRD) experiment boiling 1 liter of water across factor of power levels (500W and 1000W) and experiment duration (300-600 sec), with data optimized using Response Surface Methodology in Minitab Software",
-      "Galvanized steel achieved the highest composite desirability score (0.761) and the best energy efficiency (40,99%), making it to be the top material performed from an energy.",
-      "Galvannealed steel demonstrated a better thermal durability between other materials and have the lowest energy consumption (72.296 Wh), making it the best choice for long term."
+    "preview": [
+      "../assets/image/vrp_route/vrp2.png",
+      "../assets/image/vrp_route/vrp3.png"
+    ],
+    "captions": [
+      "penjelasan screen1",
+      "penjelasan screen2"
     ],
     "report": "https://drive.google.com/file/d/1MUT7H03IIml794FcHqja1-5nZ-DQDdcQ/view?usp=sharing"
   }
