@@ -29,7 +29,14 @@
         </ul>
     </nav>
 
-
+    <div class="nav-overlay" id="navOverlay">
+        <button class="nav-close" id="navClose">✕</button>
+        <nav class="nav-overlay-links">
+            <a href="../index.html">Home</a>
+            <a href="projects.html">What I Do?</a>
+            <a href="about.html">About Me</a>
+        </nav>
+    </div>
   <!-- ABOUT CONTENT -->
   <section class="about-section">
     <!-- intro -->
@@ -71,11 +78,29 @@
   </footer>
 
   <script>
-    // Mobile nav toggle
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      const navToggle = document.getElementById('navToggle');
+      const navOverlay = document.getElementById('navOverlay');
+      const navClose = document.getElementById('navClose');
 
+      navClose.addEventListener('click', () => {
+          navOverlay.classList.remove('open');
+          navToggle.classList.remove('hidden'); 
+      });
+
+      navToggle.addEventListener('click', () => {
+          navOverlay.classList.add('open');
+          navToggle.classList.add('hidden'); 
+      });
+
+      navOverlay.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+              navOverlay.classList.remove('open');
+          });
+      });
+  </script>
+
+  <script>
+    
     // Fade-in on scroll
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {

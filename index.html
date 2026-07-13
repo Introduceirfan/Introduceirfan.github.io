@@ -28,7 +28,16 @@
             <li><a href="pages/about.html">About Me</a></li>
         </ul>
     </nav>
-    
+
+    <div class="nav-overlay" id="navOverlay">
+        <button class="nav-close" id="navClose">✕</button>
+        <nav class="nav-overlay-links">
+            <a href="index.html">Home</a>
+            <a href="pages/projects.html">What I Do?</a>
+            <a href="pages/about.html">About Me</a>
+        </nav>
+    </div>
+
     <!--Home-->
     <section id="home">
         <div class="hero-content fade-in">
@@ -75,6 +84,28 @@
     <footer>
         <p>© 2026 Febrian Naufal Irfansyah</p>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navOverlay = document.getElementById('navOverlay');
+        const navClose = document.getElementById('navClose');
+
+        navClose.addEventListener('click', () => {
+            navOverlay.classList.remove('open');
+            navToggle.classList.remove('hidden'); 
+        });
+
+        navToggle.addEventListener('click', () => {
+            navOverlay.classList.add('open');
+            navToggle.classList.add('hidden'); 
+        });
+
+        navOverlay.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navOverlay.classList.remove('open');
+            });
+        });
+    </script>
 
     <script src="assets/static/script.js"></script>
 

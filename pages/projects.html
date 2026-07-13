@@ -29,6 +29,15 @@
         </ul>
     </nav>
 
+    <div class="nav-overlay" id="navOverlay">
+        <button class="nav-close" id="navClose">✕</button>
+        <nav class="nav-overlay-links">
+            <a href="../index.html">Home</a>
+            <a href="projects.html">What I Do?</a>
+            <a href="about.html">About Me</a>
+        </nav>
+    </div>
+
   <!-- HEADER -->
   <section class="project-header fade-in">
     <p class="projects-quote">They say, <span>"When there's a will, there's a way."</span></p>
@@ -59,12 +68,28 @@
   </footer>
 
   <script>
-    //mobile toggleee 
+      const navToggle = document.getElementById('navToggle');
+      const navOverlay = document.getElementById('navOverlay');
+      const navClose = document.getElementById('navClose');
 
-    const navToggle = document.getElementById('navToggle');
-    const navLinks = document.getElementById('navLinks');
-    navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+      navClose.addEventListener('click', () => {
+          navOverlay.classList.remove('open');
+          navToggle.classList.remove('hidden'); 
+      });
 
+      navToggle.addEventListener('click', () => {
+          navOverlay.classList.add('open');
+          navToggle.classList.add('hidden'); 
+      });
+
+      navOverlay.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+              navOverlay.classList.remove('open');
+          });
+      });
+  </script>
+
+  <script>
     fetch('../data/projects.json')
       .then(res => res.json())
       .then(projects => {

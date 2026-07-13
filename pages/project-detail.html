@@ -29,6 +29,15 @@
         </ul>
     </nav>
 
+    <div class="nav-overlay" id="navOverlay">
+        <button class="nav-close" id="navClose">✕</button>
+        <nav class="nav-overlay-links">
+            <a href="../index.html">Home</a>
+            <a href="projects.html">What I Do?</a>
+            <a href="about.html">About Me</a>
+        </nav>
+    </div>
+
   <!-- CONTENT -->
   <div class="detail-wrapper" id="detailContent">
     <div class="not-found">
@@ -52,6 +61,30 @@
     </div>
 
   </footer>
+
+  <script>
+      const navToggle = document.getElementById('navToggle');
+      const navOverlay = document.getElementById('navOverlay');
+      const navClose = document.getElementById('navClose');
+
+      navClose.addEventListener('click', () => {
+          navOverlay.classList.remove('open');
+          navToggle.classList.remove('hidden'); 
+          
+      });
+
+      navToggle.addEventListener('click', () => {
+          navOverlay.classList.add('open');
+          navToggle.classList.add('hidden');
+          console.log('hidden added:', navToggle.classList); 
+      });
+
+      navOverlay.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+              navOverlay.classList.remove('open');
+          });
+      });
+  </script>
 
   <script>
     const params = new URLSearchParams(window.location.search);
