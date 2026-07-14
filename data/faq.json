@@ -11,10 +11,23 @@
     ]
   },
   {
-    "question": "What's your professional journey been like so far?",
+    "question": "How's your professional journey been like so far?",
     "paragraphs": [
-      "My journey actually started in manufacturing. I interned at PT Konimex working on an FTE project, and later joined PT Dua Kelinci as a Management Trainee where I handling production operations and Kaizen improvement projects.", 
-      "But along the way, I realized my true interest was always in technology. So I made the jump decision into programming to building web applications and freelancing, where i get to directly solve real-world client problems."
+      "My journey actually started in manufacturing. I interned at PT Konimex working on an FTE project, and later joined PT Dua Kelinci as a Management Trainee where I handled daily production operations and Kaizen improvement projects.", 
+      "But along the way, I realized my true interest was always in technology. So I made a jump into programming to building web applications and freelancing, where i get to directly solve real-world client problems."
+    ]
+  },
+  {
+    "question": "What are you building and learning right now?",
+    "paragraphs": [
+      "Right now, I'm building this website, my own personal space to share projects, experiences, and thoughts. It's a lifelong project, and I plan to keep adding more features, including a personal blog.", 
+      "As a lifelong learner, I'm currently focusing on JavaScript for web development and Python to strengthen my programming foundations. I believe we can learn anything if we're curious enough and stay consistent along the way."
+    ]
+  },
+  {
+    "question": "What are you looking for the next step?",
+    "paragraphs": [
+      "I'm looking for an environment that values continuous learning and meaningful challenges. I want to contribute and create solutions that make a real impact. I believe that kind of growth only comes from staying curious, consistent, and genuinely enjoying the process."
     ]
   }
 ]

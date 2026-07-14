@@ -1,6 +1,0 @@
-This favicon was generated using the following font:
-
-- Font Title: Besley
-- Font Author: undefined
-- Font Source: https://fonts.gstatic.com/s/besley/v21/PlIhFlO1MaNwaNGWUC92IOH_mtG4fTbGSdRoFPOl8-E.ttf
-- Font License: undefined)
