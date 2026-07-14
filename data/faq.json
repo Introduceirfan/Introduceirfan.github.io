@@ -1,10 +1,20 @@
 [
   {
     "question": "What's Your background?",
-    "answer": "I graduated from Universitas Sebelas Maret with a degree in Industrial Engineering and was fortunate enough to graduate with Cum Laude honors. Currently based in Kebumen, Central Java."
+    "paragraphs": ["I graduated from Universitas Sebelas Maret with a degree in Industrial Engineering and was fortunate enough to graduate with Cum Laude honors. Currently based in Kebumen, Central Java."]
   },
   {
     "question": "How did you end up writing code? Doesn't Industrial Engineering focus on production?",
-    "answer": "First of all, yes, that's a fair assumption. Industrial Engineering is often associated with production, but in reality, it's a multidisciplinary field. During the university, I had an opportunity to learn programming and build web applications to solve real-world case studies. So, how did I end up writing code? Honestly, it's pretty simple, because I genuinely enjoyed it. The more I learned, the more curious I became about technology."
+    "paragraphs": [
+      "First of all, yes, that's a fair assumption. Industrial Engineering is often associated with production, but in reality, it's a multidisciplinary field. During the university, I had an opportunity to learn programming and build web applications to solve real-world case studies.", 
+      "So, how did I end up writing code? Honestly, it's pretty simple, because I genuinely enjoyed it. The more I learned, the more curious I became about technology."
+    ]
+  },
+  {
+    "question": "What's your professional journey been like so far?",
+    "paragraphs": [
+      "My journey actually started in manufacturing. I interned at PT Konimex working on an FTE project, and later joined PT Dua Kelinci as a Management Trainee where I handling production operations and Kaizen improvement projects.", 
+      "But along the way, I realized my true interest was always in technology. So I made the jump decision into programming to building web applications and freelancing, where i get to directly solve real-world client problems."
+    ]
   }
 ]
