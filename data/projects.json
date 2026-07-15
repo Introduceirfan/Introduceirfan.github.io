@@ -3,15 +3,19 @@
     "id": "vrprouting",
     "title": "Vehicle Routing Optimization",
     "summary": "A web about Vehicle Routing Problem (VRP) built for a logistics company to optimize multi-vehicle delivery routes.",
-    "description": "Full Stack VRP dashboard (heavy javascript) that enables logistics planner to optimize delivery routes across multiple vehicles. The system incorporates real-world road networks using OSRM routing engine based on vehicle assignment by demand (tonase) and volume. Thus, the web provides delivery history tracking with Excel export capability.",
-    "image": "../assets/image/slider1.png",
+    "description": "Digitizes the manual, paper-based route planning process for logistics company. The users input store demand, select vehicles, and system validates capacity before computing optimal routes based on actual road geometry. The output becomes estimated time, fuel cost, and paths for each vehicle.",
+    "image": "../assets/image/vrp_route/vrp1.png",
     "preview": [
-      "../assets/image/vrp_route/vrp2.png",
-      "../assets/image/vrp_route/vrp3.png"
+      "../assets/image/vrp_route/vrp1.png",
+      "../assets/image/vrp_route/vrp4.png",
+      "../assets/image/vrp_route/vrp3.png",
+      "../assets/image/vrp_route/vrp5.png"
     ],
     "captions": [
-      "penjelasan screen1",
-      "penjelasan screen2"
+      "Overall dashboard view. Step 1: selecting the stores for delivery.",
+      "Step 2 : Input tonnage and volume for each store.",
+      "Step 3 : Selecting vehicles for the delivery.",
+      "Calculation output, automatically saved to delivery history."
     ]
   },
   {
@@ -21,12 +25,18 @@
     "summary": "A digital internal platform built to track company stock, log expenses, and handle monthly stock checks in one place.",
     "description": "this is description",
     "preview": [
-      "../assets/image/vrp_route/vrp2.png",
-      "../assets/image/vrp_route/vrp3.png"
+      "../assets/image/stock_dashboard/stk1.png",
+      "../assets/image/stock_dashboard/stk2.png",
+      "../assets/image/stock_dashboard/stk3.png",
+      "../assets/image/stock_dashboard/stk4.png",
+      "../assets/image/stock_dashboard/stk5.png"
     ],
     "captions": [
       "penjelasan screen1",
-      "penjelasan screen2"
+      "penjelasan screen2",
+      "penjelasan screen3",
+      "penjelasan screen4",
+      "penjelasan screen5"
     ]
   },
   {
