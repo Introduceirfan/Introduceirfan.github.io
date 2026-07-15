@@ -3,8 +3,8 @@
     "id": "vrprouting",
     "title": "Vehicle Routing Optimization",
     "summary": "A web about Vehicle Routing Problem (VRP) built for a logistics company to optimize multi-vehicle delivery routes.",
-    "description": "Digitizes the manual, paper-based route planning process for logistics company. The users input store demand, select vehicles, and system validates capacity before computing optimal routes based on actual road geometry. The output becomes estimated time, fuel cost, and paths for each vehicle.",
-    "image": "../assets/image/vrp_route/vrp1.png",
+    "description": "Digitizes the manual, paper-based route planning process for logistics company. Built with Python, Flask, and SQlite, users can input store demand, select vehicles, and system validates capacity before computing optimal routes based on actual road geometry. The output becomes estimated time, fuel cost, and paths for each vehicle.",
+    "image": "../assets/image/vrp_route/overview1.png",
     "preview": [
       "../assets/image/vrp_route/vrp1.png",
       "../assets/image/vrp_route/vrp4.png",
@@ -21,71 +21,66 @@
   {
     "id": "stock2",
     "title": "Inventory Management System",
-    "image": "../assets/image/slider2.png",
+    "image": "../assets/image/stock_dashboard/overview2.png",
     "summary": "A digital internal platform built to track company stock, log expenses, and handle monthly stock checks in one place.",
-    "description": "this is description",
+    "description": "A web-based inventory management system, built with React, Vite, and Supabase. The system provides a real-time overview of total items, stock value, and depleted materials, with monthly charts for quantity, consumption, and total value. Users can manage inventory via CRUD, log material expenditures, and run monthly stock opname month-to-month tracking.",
     "preview": [
       "../assets/image/stock_dashboard/stk1.png",
       "../assets/image/stock_dashboard/stk2.png",
       "../assets/image/stock_dashboard/stk3.png",
-      "../assets/image/stock_dashboard/stk4.png",
-      "../assets/image/stock_dashboard/stk5.png"
+      "../assets/image/stock_dashboard/stk5.png",
+      "../assets/image/stock_dashboard/stk4.png"
     ],
     "captions": [
-      "penjelasan screen1",
-      "penjelasan screen2",
-      "penjelasan screen3",
-      "penjelasan screen4",
-      "penjelasan screen5"
+      "Dashboard overview showing current inventory condition",
+      "Inventory management with all item list",
+      "Material expenditure log for consumed inventory items",
+      "Expenditure input form with quantity used and date fields",
+      "Monthly stock opname for tracking inventory condition per period"
     ]
   },
   {
     "id": "cafe",
     "title": "Cafe Management Web Application",
-    "image": "../assets/image/project2.png",
-    "summary": "A lightweight web-based database application built for a cafe startup to integrating inventory, menu, and sales management into a system with automated ingredient tracking on every transaction",
-    "description": "Built a lightweight web-based database application for a cafe startup to manage day-to-day operational. The app connects inventory, menu, and sales, where inputting a sales automatically deducts ingredients that listed in inventory based on the recipe linked on menu item.",
+    "image": "../assets/image/cafe_stock/overview3.png",
+    "summary": "A lightweight cafe management system that connects inventory, menu, and sales with automatic ingredient tracking on every transaction.",
+    "description": "<strong><em>(First client project — discontinued mid-development)</strong></em> A web-based management system for a small cafe, built with Python, Flask, and SQLite. The system covers inventory tracking with low-stock alerts, menu and recipe management linked to inventory, and sales logging with stock sufficiency validation. Unfinished, but functional for its core features.",
     "preview": [
-      "../assets/image/vrp_route/vrp2.png",
-      "../assets/image/vrp_route/vrp3.png"
+      "../assets/image/cafe_stock/cafe1.png",
+      "../assets/image/cafe_stock/cafe2.png",
+      "../assets/image/cafe_stock/cafe3.png",
+      "../assets/image/cafe_stock/cafe4.png",
+      "../assets/image/cafe_stock/cafe5.png"
     ],
     "captions": [
-      "penjelasan screen1",
-      "penjelasan screen2"
+      "Dashboard with low-stock alerts, unavailable menu items, and recent sales activity",
+      "Inventory management with basic CRUD functionality",
+      "Menu list with recipe linkage to inventory items",
+      "Sales history logging and input",
+      "Stock insufficient validation when sales input exceeds available inventory"
     ],
     "github": "https://github.com/Introduceirfan/Database_app"
   },
   {
     "id": "personalweb",
     "title": "Personal Website",
-    "image": "../assets/image/project1.png",
-    "summary": "This is my personal website as you can see right now..",
-    "description": "Personal website that allows myself to introduce myself, showcase my projects, and documenting my life journey so far.",
+    "image": "../assets/image/my_website/overview4.png",
+    "summary": "A personal space to document and share my work (projects, thoughts, or anything). Built as a living portfolio that grows over time.",
+    "description": "My little corner of the internet. A living record of everything I build, learn, and think about. Started as a portfolio to showcase my projects, but over time will grow into something more to become a space for thoughts, stories, and whatever else is worth sharing. A lifelong work in progress.",
     "preview": [
-      "../assets/image/vrp_route/vrp2.png",
-      "../assets/image/vrp_route/vrp3.png"
+      "../assets/image/my_website/web1.png",
+      "../assets/image/my_website/web2.png",
+      "../assets/image/my_website/web4.png",
+      "../assets/image/my_website/web3.png",
+      "../assets/image/my_website/web5.png"
     ],
     "captions": [
-      "penjelasan screen1",
-      "penjelasan screen2"
+      "Personal Website Home",
+      "Projects Overview Section",
+      "Projects Detail Section",
+      "About me Section",
+      "FAQ for the curious one"
     ],
     "github": "https://github.com/Introduceirfan/Introduceirfan.github.io"
-  },
-  {
-    "id": "skripsi",
-    "title": "Performance Analysis of Induction Stove Converter Materials Based on Energy Consumption, Efficiency, and Cost",
-    "image": "../assets/image/skripsi.png",
-    "summary": "An experimental study comparing three alternatives of ferromagnetic materials as induction stove converter plates to analyze energy consumption and efficiency to identify the most viable alternative for low-income households",
-    "description": "Experiment about analyzing the performan of three affordable economic ferromagnetic material, mild steel, galvanized steel, and galvannealed steel as a induction stove plates that evaluated based on energy consumption, efficiency, and production cost. The study aims to provide a  cost-effective alternative besides commercial converters for low-income households.",
-    "preview": [
-      "../assets/image/vrp_route/vrp2.png",
-      "../assets/image/vrp_route/vrp3.png"
-    ],
-    "captions": [
-      "penjelasan screen1",
-      "penjelasan screen2"
-    ],
-    "report": "https://drive.google.com/file/d/1MUT7H03IIml794FcHqja1-5nZ-DQDdcQ/view?usp=sharing"
   }
-  
 ]

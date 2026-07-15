@@ -993,10 +993,7 @@ footer.footer-right {
   }
 
   .hero-image {
-    width: 100%;
-    height: 200px;
-    top: 0;
-    order: 1;
+    display: none;
   }
   
   .hero-name {
@@ -1035,7 +1032,7 @@ footer.footer-right {
   }
 
   #projects {
-    padding: 4rem 6%;
+    padding: 6rem 6%;
   }
 
   .project-image {
