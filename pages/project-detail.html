@@ -152,16 +152,56 @@
         });
 
         container.querySelectorAll('.slide-img').forEach(img => {
-            img.style.cursor = 'zoom-in';
-            img.addEventListener('click', () => {
+          img.style.cursor = 'zoom-in';
+          img.addEventListener('click', () => {
+              history.pushState({ lightbox: true }, '');
+
               const overlay = document.createElement('div');
               overlay.className = 'lightbox-overlay';
-              overlay.innerHTML = `<img src="${img.src}" class="lightbox-img" />`;
+              overlay.innerHTML = `
+                  <button class="lightbox-prev">&#8249;</button>
+                  <img src="${img.src}" class="lightbox-img" />
+                  <button class="lightbox-next">&#8250;</button>
+              `;
               document.body.appendChild(overlay);
-              overlay.addEventListener('click', () => overlay.remove()); 
-            });
-        });
+
+              const boxImg = overlay.querySelector('.lightbox-img');
+
+              overlay.querySelector('.lightbox-prev').addEventListener('click', e => {
+                  e.stopPropagation();
+                  imgs[current].classList.remove('active');
+                  current = (current - 1 + imgs.length) % imgs.length;
+                  imgs[current].classList.add('active');
+                  if (caption && project.captions) caption.textContent = project.captions[current];
+                  boxImg.src = imgs[current].src;
+              });
+
+              overlay.querySelector('.lightbox-next').addEventListener('click', e => {
+                  e.stopPropagation();
+                  imgs[current].classList.remove('active');
+                  current = (current + 1) % imgs.length;
+                  imgs[current].classList.add('active');
+                  if (caption && project.captions) caption.textContent = project.captions[current];
+                  boxImg.src = imgs[current].src;
+              });
+
+              overlay.addEventListener('click', e => {
+                  if (e.target === overlay) closeLightbox(overlay);
+              });
+
+              const onPopState = () => {
+                  closeLightbox(overlay);
+                  window.removeEventListener('popstate', onPopState);
+              };
+              window.addEventListener('popstate', onPopState);
+          });
       });
+
+      function closeLightbox(overlay) {
+          overlay.remove();
+          if (history.state?.lightbox) history.back();
+      }
+    });
 
       const faces = [
       '../assets/image/notion_smile.png',
